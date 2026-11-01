@@ -8,7 +8,7 @@ const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display
 const dmSerif = DM_Serif_Display({ subsets: ['latin'], weight: '400', variable: '--font-dm-serif', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'VerityAI · Document Forensics',
+  title: 'DocumentVerify · Document Forensics',
   description: 'AI-powered document tampering and authenticity verification workspace.',
   generator: 'v0.app',
   icons: {

@@ -1,5 +1,5 @@
-import ForensicsDashboard from '@/components/forensics-dashboard'
+import PublicSite from '@/components/public-site'
 
 export default function Page() {
-  return <ForensicsDashboard />
+  return <PublicSite />
 }
