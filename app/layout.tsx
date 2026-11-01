@@ -1,6 +1,11 @@
 import { Analytics } from '@vercel/analytics/next'
+import { DM_Sans, DM_Serif_Display, Manrope } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' })
+const dmSerif = DM_Serif_Display({ subsets: ['latin'], weight: '400', variable: '--font-dm-serif', display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'VerityAI · Document Forensics',
@@ -26,11 +31,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'light',
+  themeColor: '#F4EFE6',
 }
 
 export default function RootLayout({
@@ -40,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${manrope.variable} ${dmSans.variable} ${dmSerif.variable} antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

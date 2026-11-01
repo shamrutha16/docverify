@@ -29,30 +29,40 @@
 
 :root {
   color-scheme: light;
-  --background: #f5f8fc;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --popover: #ffffff;
-  --popover-foreground: #0f172a;
-  --primary: #2563eb;
-  --primary-foreground: #ffffff;
-  --secondary: #f8fafc;
-  --secondary-foreground: #0f172a;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --accent: #e8f0fe;
-  --accent-foreground: #1d4ed8;
-  --destructive: #dc2626;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #2563eb;
+  --background: #f4efe6;
+  --foreground: #292720;
+  --card: #faf7f1;
+  --card-foreground: #292720;
+  --popover: #fffcf7;
+  --popover-foreground: #292720;
+  --primary: #b65332;
+  --primary-foreground: #fffcf7;
+  --secondary: #eee7dc;
+  --secondary-foreground: #292720;
+  --muted: #eee7dc;
+  --muted-foreground: #82796d;
+  --accent: #f0ded4;
+  --accent-foreground: #963f27;
+  --destructive: #b13b32;
+  --border: #ddd3c5;
+  --input: #cfc2b2;
+  --ring: #b65332;
   --radius: 0.75rem;
 }
 
 @layer base {
   * { @apply border-border outline-ring/50; }
-  html { background: #f5f8fc; }
-  body { @apply bg-background text-foreground; }
-  button, input { font: inherit; }
+  html { background: #f4efe6; }
+  body { @apply bg-background text-foreground; font-family: var(--font-dm-sans), sans-serif; font-size: 14px; line-height: 22px; }
+  button, input, select, textarea { font: inherit; }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-manrope), sans-serif; color: #292720; }
+  h1 { font-size: clamp(1.75rem, 3vw, 2rem); line-height: 2.5rem; font-weight: 700; letter-spacing: -0.03em; }
+  h2 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; letter-spacing: -0.02em; }
+  h3, h4 { font-size: 1rem; line-height: 1.5rem; font-weight: 600; }
+  table { font-variant-numeric: tabular-nums; }
+  button, a, [role='button'] { font-family: var(--font-dm-sans), sans-serif; }
 }
+
+.font-serif-editorial { font-family: var(--font-dm-serif), Georgia, serif; }
+.font-display { font-family: var(--font-manrope), sans-serif; }
+.tabular-nums { font-variant-numeric: tabular-nums; }
