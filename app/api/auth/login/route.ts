@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
-import { isValidDevelopmentCredential, SESSION_COOKIE } from '@/lib/dev-auth'
+import { isValidDevelopmentCredential } from '@/lib/dev-auth'
+import { SESSION_COOKIE, SESSION_VALUE } from '@/lib/session'
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null)
@@ -11,6 +12,6 @@ export async function POST(request: Request) {
   }
 
   const response = NextResponse.json({ ok: true, mode: 'development' })
-  response.cookies.set(SESSION_COOKIE, 'development-session', { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', path: '/', maxAge: 60 * 60 * 24 * 7 })
+  response.cookies.set(SESSION_COOKIE, SESSION_VALUE, { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', path: '/', maxAge: 60 * 60 * 24 * 7 })
   return response
 }
